@@ -1,0 +1,18 @@
+# Virtual Environment
+fraud_env/
+venv/
+env/
+
+# Data Files (Kaggle IEEE-CIS Data)
+*.csv
+*.zip
+
+# Model and Schema Binaries
+*.pkl
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# OS Files
+.DS_Store
