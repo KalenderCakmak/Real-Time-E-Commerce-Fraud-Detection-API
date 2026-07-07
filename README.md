@@ -1,12 +1,12 @@
 # Real-Time E-Commerce Fraud Detection API 🛡️💳
 
-Bu proje; milyonlarca işlem içeren büyük ölçekli ve yüksek sınıf dengesizliğine (class imbalance) sahip e-ticaret verileri üzerinde, gerçek zamanlı sahtekarlık (fraud) tespiti yapabilen production-grade bir mikroservis mimarisidir. 
+Bu proje; milyonlarca işlem içeren büyük ölçekli ve yüksek sınıf dengesizliğine (class imbalance) sahip e-ticaret verileri üzerinde, gerçek zamanlı fraud tespiti yapabilen production-grade bir mikroservis mimarisidir. 
 
-Laboratuvar ortamındaki maskelenmiş verilerin aksine; gerçek dünyada karşılaşabileceğiniz cihaz türleri, lokasyon verileri, kart bilgileri ve e-posta uzantıları gibi ham öznitelikleri (features) işleyen uçtan uca bir makine öğrenmesi boru hattı (pipeline) kurgulanmıştır.
+Laboratuvar ortamındaki maskelenmiş verilerin aksine; gerçek dünyada karşılaşabileceğiniz cihaz türleri, lokasyon verileri, kart bilgileri ve e-posta uzantıları gibi ham features'ı işleyen uçtan uca bir makine öğrenmesi pipeline'ı kurgulanmıştır.
 
 ---
 
-## 📈 Model Performansı & İş Mantığı (Business Logic)
+## 📈 Model Performansı & İş Mantığı 
 
 Sistem, dürüst veri simülasyonu sağlayan bağımsız test grubu üzerinde yapılan batch değerlendirmede aşağıdaki kararlı sonuçları üretmiştir:
 
