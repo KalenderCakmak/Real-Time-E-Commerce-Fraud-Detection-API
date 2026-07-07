@@ -19,6 +19,9 @@ Finansal sahtekarlık modellerinde temel amaç mali kayıpları (chargeback) eng
 
 Elde edilen **%12.50 Precision** değeri, modelin şüpheli olarak işaretlediği her 8 işlemden 1'inin gerçek fraud, geri kalan 7'sinin ise masum işlemler (False Positive) olduğunu belirtir. Bu davranış, production ortamında bir **"Yumuşak Engel" (Soft-Block / 3D Secure / SMS OTP yönlendirmesi)** mekanizması olarak kurgulanmıştır. Bankacılık ve e-ticaret sektör standartlarında, gerçek bir dolandırıcılığı kaçırmaktansa, masum müşterilere ek bir güvenlik doğrulaması (SMS kodu) göndermek finansal risk yönetimi açısından en optimum yaklaşımdır.
 
+<p align="center">
+  <img src="feature_importance.png" alt="Feature Importance" width="700">
+</p>
 ---
 
 ## 🛠️ Öne Çıkan Mühendislik Pratikleri
