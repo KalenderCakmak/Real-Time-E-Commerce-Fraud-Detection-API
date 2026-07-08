@@ -32,7 +32,7 @@ for payload in payloads:
             success_count += 1
             latencies.append((req_end - req_start) * 1000)
         else:
-            # Hata detayını ilk hatalı istekte konsola yazdırarak kontrol sağlıyoruz
+            # Hata detayının ilk hatalı istekte konsola yazdırılarak kontrolün sağlanması
             print(f"Hata Kodu: {response.status_code}, Detay: {response.text}")
             break
     except requests.exceptions.RequestException as e:
