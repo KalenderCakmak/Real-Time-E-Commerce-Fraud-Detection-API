@@ -37,16 +37,16 @@ Elde edilen **%12.50 Precision** değeri, modelin şüpheli olarak işaretlediğ
 Projeyi çalıştırmak için öncelikle bir sanal ortam oluşturun ve gerekli kütüphaneleri yükleyin:
 
 # Sanal ortam oluşturma
-python -m venv fraud_env
+```python -m venv fraud_env```
 
 # Sanal ortamı aktif etme (Windows)
-fraud_env\Scripts\activate
+```fraud_env\Scripts\activate```
 
 # Sanal ortamı aktif etme (Linux / MacOS)
-source fraud_env/bin/activate
+```source fraud_env/bin/activate```
 
 # Gerekli bağımlılıkları yükleme
-pip install -r requirements.txt
+```pip install -r requirements.txt ```
 
 2. Veri Setinin Temini
 Kaggle ve Vesta Corporation lisans kısıtlamaları ile GitHub dosya boyutu limitleri sebebiyle ham veri setleri bu depoda yer almamaktadır.
@@ -60,14 +60,14 @@ Kuralları kabul ettikten sonra train_transaction.csv ve train_identity.csv dosy
 3. Modelin Eğitilmesi ve Serileştirilmesi (Serialization)
 Ham verileri SQL mantığıyla birleştiren, kategorik şemayı çıkaran ve modeli eğiten betiği çalıştırın:
 
-python train.py
+```python train.py```
 
 Bu işlem sonucunda ana dizinde ieee_fraud_model.pkl, categorical_columns.pkl ve feature_names.pkl dosyaları üretilecektir.
 
 4. Canlı Mikroservisin (FastAPI) Başlatılması
 Üretilen model nesnelerini RAM'e yükleyerek istek kabul etmeye hazır asenkron API sunucusunu ayağa kaldırın:
 
-uvicorn app:app --host 0.0.0.0 --port 8000
+```uvicorn app:app --host 0.0.0.0 --port 8000```
 
 Terminalde Application startup complete. ibaresini gördüğünüzde API canlıya alınmış demektir.
 
@@ -76,11 +76,11 @@ Uvicorn sunucusu arka planda çalışmaya devam ederken, yeni bir terminal sekme
 
 Dürüst Toplu Doğruluk Testi: Eğitimde modelin hiç görmediği temiz bir veri diliminden (skiprows katmanı ile) 500 adet işlem çekip konfüzyon matrisini yazdırmak için:
 
-python test_accuracy.py
+```python test_accuracy.py```
 
 Performans ve Yük Testi: Sisteme ardışık 1000 adet e-ticaret JSON paketi göndererek milisaniye bazında yanıt gecikmesini (latency) ölçmek için:
 
-python test_api.py
+```python test_api.py```
 
 📝 API Uç Noktası (Endpoint) Şeması
 POST /predict
@@ -88,6 +88,7 @@ POST /predict
 
 Örnek İstek Gövdesi (Payload):
 
+```
 JSON
 {
   "TransactionAmt": 150.00,
@@ -107,5 +108,6 @@ JSON
   "status": "approved",
   "fraud_probability": 0.0412
 }
+```
 📄 Lisans
 Bu proje altındaki tüm kaynak kodlar MIT Lisansı ile dağıtılmaktadır. Eğitimde kullanılan veri setinin mülkiyet hakları Vesta Corporation ve IEEE-CIS topluluğuna aittir.
