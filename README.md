@@ -88,8 +88,7 @@ POST /predict
 
 Örnek İstek Gövdesi (Payload):
 
-```
-JSON
+```JSON
 {
   "TransactionAmt": 150.00,
   "ProductCD": "W",
