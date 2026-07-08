@@ -9,7 +9,6 @@ BATCH_SIZE = 500
 
 print(f"2. Test için eğitim setinden bağımsız {BATCH_SIZE} adet ardışık işlem okunuyor...")
 
-# ÇÖZÜM: 0. satırı (başlıkları) koru, 1 ile 50000 arasındaki satırları atla
 skip_indices = range(1, 50001) 
 
 try:
@@ -19,13 +18,11 @@ except FileNotFoundError:
     print("HATA: CSV dosyaları bulunamadı. Terminalin proje kök dizininde olduğundan emin ol.")
     sys.exit(1)
 
-# Tabloları TransactionID üzerinden güvenle birleştir
 df = df_transaction.merge(df_identity, on='TransactionID', how='left')
 
 actual_labels = df['isFraud'].values
 df_payloads = df.drop(['isFraud', 'TransactionID'], axis=1)
 
-# NaN değerleri JSON standartlarına uygun şekilde None'a çevir
 df_payloads = df_payloads.replace({np.nan: None, np.inf: None, -np.inf: None})
 payloads = df_payloads.astype(object).where(pd.notnull(df_payloads), None).to_dict(orient='records')
 
