@@ -99,9 +99,9 @@ POST /predict
   "DeviceType": "mobile",
   "DeviceInfo": "SAMSUNG"
 }
-Örnek API Yanıtı (Response):
 
-JSON
+//Örnek API Yanıtı (Response):
+
 {
   "transaction_id": "req-ieee-realtime",
   "status": "approved",
