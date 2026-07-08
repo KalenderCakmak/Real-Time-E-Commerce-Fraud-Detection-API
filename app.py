@@ -16,15 +16,12 @@ async def predict_fraud(transaction: Dict[str, Any]):
     try:
         input_data = pd.DataFrame([transaction])
         
-        # Eksik olabilecek sütunları eğitim şemasına göre tamamla
         for col in feature_names:
             if col not in input_data.columns:
                 input_data[col] = None
                 
-        # Sütun sıralamasını eğitimdeki sıra ile birebir aynı yap
         input_data = input_data[feature_names]
         
-        # Sütun tiplerini eğitim şemasına uygun şekilde zorlama:
         for col in feature_names:
             if col in cat_cols:
                 input_data[col] = input_data[col].astype('category')
