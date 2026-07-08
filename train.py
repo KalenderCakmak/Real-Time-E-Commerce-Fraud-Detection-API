@@ -24,7 +24,6 @@ cat_cols = X.select_dtypes(include=['object', 'string']).columns.tolist()
 for col in cat_cols:
     X[col] = X[col].astype('category')
 
-# Modelin bekleyeceği tüm sütun sıralamasını kayıt altına alıyoruz
 feature_names = X.columns.tolist()
 
 print("4. Veri seti %80 Eğitim ve %20 Test olarak ayrıştırılıyor...")
